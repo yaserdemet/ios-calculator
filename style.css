@@ -1,0 +1,86 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Helvetica Neue", sans-serif;
+}
+body {
+  background-color: #3a3939;
+  height: 100vh;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  display: grid;
+  width: 500px;
+  height: 90%;
+  background-color: black;
+  border-radius: 50px;
+  border: 2px solid gainsboro;
+  padding: 20px;
+  box-shadow: 8px 10px 13px -1px rgba(219, 207, 207, 0.39);
+}
+
+.bos {
+  height: 210px;
+  width: 420px;
+  background-color: black;
+  padding: 20px;
+  color: white;
+  font-size: 3rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.cal {
+  padding-left: 20px;
+  height: 540px;
+  width: 460px;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  column-gap: 20px;
+  row-gap: 10px;
+}
+.btn {
+  display: flex;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  border-radius: 50px;
+}
+.orange {
+  background-color: orange;
+  color: white;
+}
+
+.grey {
+  background-color: #a5a5a5;
+}
+
+.dark {
+  background-color: #333333;
+}
+
+.zero {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.btn:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.zero div {
+  padding-left: 2rem;
+}
