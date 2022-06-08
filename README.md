@@ -1,6 +1,7 @@
 # Ios-Calculator
 
-![Animation](https://user-images.githubusercontent.com/99739515/172607674-6a17c0e5-8a1c-4c6e-8414-4e7318eed57b.gif)
+
+![Animation](https://user-images.githubusercontent.com/99739515/172614809-58049e3a-4632-49b3-92ad-fcd130ae2668.gif)
 
 
 
