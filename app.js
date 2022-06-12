@@ -1,4 +1,4 @@
-// ! CLASSIC SOLUTION, ASAP TO BE REPLACED BY CAPTURING SOLUTION 
+// ! CLASSIC SOLUTION, ASAP TO BE REPLACED BY CAPTURING SOLUTION
 
 const container = document.querySelector(".container");
 const uppText = document.querySelector(".upp-text");
@@ -124,8 +124,7 @@ number9.addEventListener("click", () => {
 number0.addEventListener("click", () => {
   sound.play();
   sound.currentTime = 0;
-  if (downText.textContent.length == 0 && uppText.textContent.length > 0) {
-    uppText.textContent += "0";
+  if (downText.textContent == "") {
     downText.textContent = "";
   } else {
     downText.textContent += "0";
@@ -149,75 +148,69 @@ point.addEventListener("click", () => {
   }
 });
 
+function opCheck(operator) {
+  if (downText.textContent.includes(operator)) {
+    alert("You can't use the same operator twice");
+    downText.textContent = downText.textContent.slice(
+      0,
+      downText.textContent.length - 1
+    );
+  }
+}
 
 // ? MINUSS
 minus.addEventListener("click", () => {
   sound.play();
+  opCheck("-");
   sound.currentTime = 0;
-  
-  if(downText.textContent.length == 0 ){
-   downText.textContent = "-"
-  }
-  else {
 
+  if (downText.textContent.length == 0) {
+    alert("First number is required");
+  } else {
     downText.textContent += "-";
   }
- 
- 
 });
-
 
 // ? PLUSSS
 plus.addEventListener("click", () => {
   sound.play();
   sound.currentTime = 0;
-  if(downText.textContent.length == 0 ){
+  opCheck("+");
+  if (downText.textContent.length == 0) {
     alert("First number is required");
-  }
-  else {
-    
-
-
+  } else {
     downText.textContent += "+";
   }
 });
-
 
 // ? MULTIPLYY
 multiply.addEventListener("click", () => {
   sound.play();
   sound.currentTime = 0;
-  if(downText.textContent.length == 0 ){
+  opCheck("*");
+  if (downText.textContent.length == 0) {
     alert("First number is required");
-  }
-  else {
-
+  } else {
     downText.textContent += "*";
   }
-  
-    
-
-  
- 
 });
 // ? DIVIDEE
 divide.addEventListener("click", () => {
   sound.play();
   sound.currentTime = 0;
-  if(downText.textContent.length == 0 ){
+  opCheck("/");
+  if (downText.textContent.length == 0) {
     alert("First number is required");
-  }
-  else {
-
+  } else {
     downText.textContent += "/";
   }
-  
 });
 
 // ? YÜZDE HESAPLAMA;
 modulus.addEventListener("click", () => {
   sound.play();
   sound.currentTime = 0;
+  opCheck("%");
   downText.textContent = eval((downText.textContent += "/100"));
   uppText.textContent = "";
 });
@@ -226,44 +219,21 @@ root.addEventListener("click", () => {
   sound.play();
   sound.currentTime = 0;
 
- 
   let x = Math.sqrt(parseInt(downText.textContent));
   if (x.toString().length > 5) {
     x = x.toFixed(2);
-    }
-    
+  }
+
   downText.textContent = x;
   uppText.textContent = "";
 });
-
-
-
-
 
 equal.addEventListener("click", () => {
   sound.play();
   sound.currentTime = 0;
 
+  uppText.textContent = eval(downText.textContent).toFixed(0);
+  downText.textContent = "";
 
-
- 
-    uppText.textContent = eval(downText.textContent).toFixed(0);
-    downText.textContent = "";
-
-    downText.textContent = eval(uppText.textContent).toFixed(0);
-    // uppText.textContent = "";
-
-    // if(downText.textContent.length == 0 && uppText.textContent.length > 0){
-
-    //     downText.textContent = uppText.textContent;
-    //     uppText.textContent = "";
-    //  ; 
-    // }
-    
-  
+  downText.textContent = eval(uppText.textContent).toFixed(0);
 });
-
-// if(downText.textContent.length == 0 && uppText.textContent.length > 0 ) {
-
-//     uppText.textContent += "-"
-//     downText.textContent = "";
